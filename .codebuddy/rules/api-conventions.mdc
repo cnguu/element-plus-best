@@ -1,0 +1,26 @@
+---
+description: 接口请求与 API 封装规范
+alwaysApply: true
+enabled: true
+updatedAt: 2026-03-06T13:02:18.522Z
+provider: 
+---
+
+# 接口与 API 封装规范
+
+- **统一入口**
+    - 尽量通过项目已有的请求实例/工具（如自定义 `request`/`http` 实例）发起 HTTP 请求，而不是直接使用 `fetch` 或
+      `axios.create` 新实例。
+    - 接口模块按业务域划分文件（如 `user.ts`, `auth.ts`, `system.ts`），避免所有接口堆叠在单一文件。
+
+- **函数设计**
+    - 每个接口导出一个具有明确语义的函数，命名以动宾结构为主（如 `getUserList`, `createUser`, `updateUser`, `deleteUser`）。
+    - 入参与返回值应有完整 TypeScript 类型定义，必要时抽离公共类型到独立类型文件。
+
+- **错误与返回值**
+    - 统一依赖请求封装中的错误处理机制（响应拦截器、统一 message 提示等），避免在每个 API 函数里重复写 try/catch。
+    - 对于需要特殊错误处理的接口，在业务层处理，而不是在底层请求层随意 `catch` 并吞掉错误。
+
+- **RESTful 与约定**
+    - 优先遵循 RESTful 风格：`GET` 查询、`POST` 创建、`PUT/PATCH` 更新、`DELETE` 删除。
+    - 查询参数与请求体区分清晰，尽量不要混用。

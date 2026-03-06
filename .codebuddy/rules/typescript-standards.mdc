@@ -1,0 +1,32 @@
+---
+description: TypeScript 与脚本文件编码规范
+alwaysApply: true
+enabled: true
+updatedAt: 2026-03-06T13:27:34.783Z
+provider: 
+---
+
+# TypeScript & 脚本文件规范
+
+- **类型优先**
+    - 避免使用 `any`，可以接受必要时使用 `unknown`、`never` 等更安全的类型。
+    - 公共导出（函数、组件 props、工具方法）应声明显式类型或接口。
+    - 复用类型时优先 `type`/`interface` 而不是在多个文件复制粘贴。
+
+- **命名约定**
+    - 类型、接口、枚举：使用 `PascalCase`（如 `UserInfo`, `LoginResult`）。
+    - 变量、函数：使用 `camelCase`（如 `fetchUserInfo`, `buildFormSchema`）。
+    - 常量：`UPPER_SNAKE_CASE`，仅对真正不变的配置或枚举值使用。
+
+- **代码风格**
+    - 使用 `const` 优先于 `let`，只对需要重新赋值的变量使用 `let`。
+    - 优先使用 `Array.prototype` 方法（`map`、`filter`、`reduce` 等）而不是手写循环。
+    - 对异步逻辑使用 `async/await`，避免在业务代码中直接链式 `.then().catch()`。
+
+- **错误处理**
+    - 统一通过项目中已有的请求封装和错误提示机制处理错误（如 message/notify 组件），避免散落的 `alert`/`console.log`。
+    - 业务函数出现异常时，优先抛出带有明确信息的错误，或返回统一的错误结果类型。
+
+- **模块与导入**
+    - 优先使用已配置的路径别名（如 `@/`），避免相对路径地狱（`../../../`）。
+    - 保持导入顺序：第三方库 → 别名模块 → 相对路径模块。

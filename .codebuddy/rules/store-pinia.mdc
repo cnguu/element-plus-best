@@ -1,0 +1,22 @@
+---
+description: Pinia 状态管理约定
+alwaysApply: true
+enabled: true
+updatedAt: 2026-03-06T13:26:28.356Z
+provider: 
+---
+
+# Store / Pinia 使用规范
+
+- **创建与注册**
+    - 全局仅在 `src/store/index.ts` 中创建 Pinia 实例并挂载到应用，不在其它地方重复创建实例。
+    - 通过模块化目录（如 `modules/app`, `modules/theme`, `modules/auth`, `modules/route` 等）组织 store。
+
+- **设计原则**
+    - Store 负责全局或跨页面共享状态，页面/组件内部状态仍优先使用 `ref`/`reactive`。
+    - 避免将与特定单一页面强绑定的临时状态塞进全局 store。
+
+- **编写规范**
+    - 为 store 状态、getter、action 明确定义类型。
+    - 对于带有副作用的逻辑（如本地存储、网络请求），优先在 action 中封装，而不是在组件里重复写。
+    - 需要在登出/切换账号时重置的 store，统一通过项目已存在的 `reset` 机制实现。
