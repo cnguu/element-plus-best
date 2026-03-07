@@ -7,7 +7,12 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import { createLogger, defineConfig, loadEnv } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-import { UnPluginAutoImport, UnPluginVueComponents, VitePluginCompression } from './builder/plugin'
+import {
+  UnPluginAutoImport,
+  UnPluginVisualizer,
+  UnPluginVueComponents,
+  VitePluginCompression,
+} from './builder/plugin'
 import { getServerProxy } from './builder/util'
 
 const logger = createLogger()
@@ -30,6 +35,7 @@ export default ({ mode }: ConfigEnv) => {
       UnPluginAutoImport,
       UnPluginVueComponents,
       isProd && VitePluginCompression,
+      isProd && UnPluginVisualizer,
     ],
     resolve: {
       alias: {
