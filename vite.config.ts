@@ -39,7 +39,7 @@ export default ({ mode }: ConfigEnv) => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/styles/global.scss" as *;`,
+          additionalData: `@use "@/styles/shared.scss" as *;`,
         },
       },
     },

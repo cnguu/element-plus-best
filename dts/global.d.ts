@@ -32,4 +32,9 @@ declare global {
      */
     resume: Fn
   }
+
+  export interface Window {
+    /** NProgress instance */
+    NProgress: (typeof import('@/plugins/n-progress'))['default']
+  }
 }
