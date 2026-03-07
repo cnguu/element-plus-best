@@ -24,4 +24,36 @@ export default defineConfigWithVueTs(
     files: ['src/**/__tests__/*'],
   },
   skipFormatting,
+  {
+    files: ['**/*.{js,mjs,cjs}'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'error',
+    },
+  },
+  {
+    files: ['**/*.{ts,mts,cts}'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'error',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
+    },
+  },
+  {
+    files: ['**/*.vue'],
+    rules: {
+      'no-unused-vars': 'warn',
+      'no-console': 'error',
+      'vue/multi-word-component-names': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'vue/block-order': [
+        'error',
+        {
+          order: ['script', 'template', 'style'],
+        },
+      ],
+    },
+  },
 )
