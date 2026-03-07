@@ -4,7 +4,7 @@ import { URL, fileURLToPath } from 'node:url'
 
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import { createLogger, defineConfig, loadEnv } from 'vite'
+import { createLogger, defineConfig, loadEnv, normalizePath } from 'vite'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 import { UnPluginAutoImport, UnPluginVueComponents, VitePluginCompression } from './builder/plugin'
@@ -54,10 +54,17 @@ export default ({ mode }: ConfigEnv) => {
       rollupOptions: {
         output: {
           manualChunks(id) {
-            if (id.includes('element-plus')) {
+            const normalizedId = normalizePath(id)
+            if (normalizedId.includes('element-plus/')) {
               return 'element-plus'
             }
-            if (id.includes('node_modules')) {
+            if (
+              normalizedId.includes('node_modules/vue/') ||
+              normalizedId.includes('node_modules/@vue/')
+            ) {
+              return 'vue-vendor'
+            }
+            if (normalizedId.includes('node_modules/')) {
               return 'vendor'
             }
           },
