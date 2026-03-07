@@ -3,6 +3,7 @@ import { setupNProgress } from '@/plugins/n-progress'
 import { setupRouter } from '@/router'
 import { setupStore } from '@/stores'
 
+import '@/styles/plugins/tailwind.css'
 import '@/styles/plugins/index.scss'
 
 async function setupApp() {

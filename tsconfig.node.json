@@ -7,7 +7,8 @@
         "nightwatch.conf.*",
         "playwright.config.*",
         "eslint.config.*",
-        "dts/env.d.ts"
+        "dts/env.d.ts",
+        "builder/plugin/tailwind.ts"
     ],
     "compilerOptions": {
         "module": "preserve",

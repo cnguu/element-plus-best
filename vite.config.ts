@@ -12,6 +12,7 @@ import {
   UnPluginVisualizer,
   UnPluginVueComponents,
   VitePluginCompression,
+  VitePluginTailwindCss,
 } from './builder/plugin'
 import { getServerProxy } from './builder/util'
 
@@ -34,6 +35,7 @@ export default ({ mode }: ConfigEnv) => {
       vueDevTools(),
       UnPluginAutoImport,
       UnPluginVueComponents,
+      VitePluginTailwindCss,
       isProd && VitePluginCompression,
       isProd && UnPluginVisualizer,
     ],
