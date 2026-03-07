@@ -1,3 +1,4 @@
+import UnoCss from '@unocss/eslint-config/flat'
 import pluginVitest from '@vitest/eslint-plugin'
 import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescript'
 import skipFormatting from 'eslint-config-prettier/flat'
@@ -7,6 +8,7 @@ import pluginYml from 'eslint-plugin-yml'
 import { globalIgnores } from 'eslint/config'
 
 export default defineConfigWithVueTs(
+  UnoCss,
   {
     name: 'app/files-to-lint',
     files: ['**/*.{vue,ts,mts,tsx}'],
