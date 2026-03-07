@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "dayjs": "1.11.19",
+    "element-plus": "2.13.4",
     "enum-plus": "3.1.8",
     "lodash": "4.17.23",
     "number-precision": "1.6.0",
@@ -47,6 +48,7 @@
     "lint-staged": "16.3.2",
     "npm-run-all2": "8.0.4",
     "prettier": "3.8.1",
+    "sass": "1.97.3",
     "sort-package-json": "3.6.1",
     "typescript": "5.9.3",
     "vite": "7.3.1",
