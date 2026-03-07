@@ -1,7 +1,30 @@
 {
     "name": "element-plus-best",
-    "version": "0.0.0",
-    "private": true,
+    "version": "0.0.1",
+    "description": "中后台前端最佳实践模板",
+    "keywords": [
+        "vue",
+        "vue3",
+        "admin",
+        "vite",
+        "vite7",
+        "typescript",
+        "element-plus",
+        "best"
+    ],
+    "homepage": "https://github.com/cnguu/element-plus-best",
+    "bugs": {
+        "url": "https://github.com/cnguu/element-plus-best/issues"
+    },
+    "repository": {
+        "url": "https://github.com/cnguu/element-plus-best.git"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "cnguu",
+        "email": "gu642779596@gmail.com",
+        "url": "https://github.com/cnguu"
+    },
     "type": "module",
     "scripts": {
         "dev": "vite",
