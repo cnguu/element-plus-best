@@ -1,12 +1,15 @@
-import { createPinia } from 'pinia'
-import { createApp } from 'vue'
+import App from '@/App.vue'
+import { setupRouter } from '@/router'
+import { setupStore } from '@/stores'
 
-import App from './App.vue'
-import router from './router'
+async function setupApp() {
+  const app = createApp(App)
 
-const app = createApp(App)
+  setupStore(app)
 
-app.use(createPinia())
-app.use(router)
+  await setupRouter(app)
 
-app.mount('#app')
+  app.mount('#app')
+}
+
+setupApp()
