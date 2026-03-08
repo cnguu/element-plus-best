@@ -11,6 +11,8 @@ export const CacheKeyEnum = {
   TOKEN: 'token',
   /** 用户信息 */
   USERINFO: 'userinfo',
+  /** 主题配置 */
+  THEME: 'theme',
 } as const
 export type CacheKeyType = (typeof CacheKeyEnum)[keyof typeof CacheKeyEnum]
 
@@ -22,4 +24,6 @@ export type CacheValueType = {
   [CacheKeyEnum.TOKEN]: string
   /** 用户信息 */
   [CacheKeyEnum.USERINFO]: Userinfo | null
+  /** 主题配置 */
+  [CacheKeyEnum.THEME]: Record<string, unknown>
 }

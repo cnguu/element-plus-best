@@ -1,4 +1,5 @@
-import App from '@/App.vue'
+import App from '@/app.vue'
+import { setupI18n } from '@/locales'
 import { setupDayjs } from '@/plugins/dayjs'
 import { setupElementPlusPropDefault } from '@/plugins/element-plus'
 import { setupIconifyOffline } from '@/plugins/iconify'
@@ -20,6 +21,8 @@ async function setupApp() {
   const app = createApp(App)
 
   setupStore(app)
+
+  setupI18n(app)
 
   await setupRouter(app)
 
