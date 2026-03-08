@@ -21,6 +21,8 @@ interface ImportMetaEnv {
   readonly VITE_MOCK_TOKEN: string
   /** mock token 字段名 */
   readonly VITE_MOCK_TOKEN_FIELD: string
+  /** iconify 地址 */
+  readonly VITE_ICONIFY_URL: string
 }
 
 interface ImportMeta {

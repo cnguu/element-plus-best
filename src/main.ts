@@ -1,4 +1,5 @@
 import App from '@/App.vue'
+import { setupIconifyOffline } from '@/plugins/iconify'
 import { setupNProgress } from '@/plugins/n-progress'
 import { setupRouter } from '@/router'
 import { setupStore } from '@/stores'
@@ -7,6 +8,8 @@ import '@/styles/plugins/index.scss'
 
 async function setupApp() {
   setupNProgress()
+
+  setupIconifyOffline()
 
   const app = createApp(App)
 
