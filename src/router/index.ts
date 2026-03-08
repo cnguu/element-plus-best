@@ -7,6 +7,12 @@ import { setupRouterGuard } from '@/router/guards'
 export const router = createRouter({
   history: createWebHashHistory(import.meta.env.VITE_BASE_PATH),
   routes: [],
+  scrollBehavior: (to, _from, savedPosition) => {
+    if (savedPosition) {
+      return savedPosition
+    }
+    return to.hash ? { behavior: 'smooth', el: to.hash } : { left: 0, top: 0 }
+  },
 })
 
 export async function setupRouter(app: App) {
