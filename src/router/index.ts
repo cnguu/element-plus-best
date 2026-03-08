@@ -3,10 +3,11 @@ import type { App } from 'vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import { setupRouterGuard } from '@/router/guards'
+import { routes } from '@/router/routes'
 
 export const router = createRouter({
   history: createWebHashHistory(import.meta.env.VITE_BASE_PATH),
-  routes: [],
+  routes,
   scrollBehavior: (to, _from, savedPosition) => {
     if (savedPosition) {
       return savedPosition
@@ -20,3 +21,5 @@ export async function setupRouter(app: App) {
   setupRouterGuard(router)
   await router.isReady()
 }
+
+export { routes, accessRoutes, coreRouteNames } from '@/router/routes'
