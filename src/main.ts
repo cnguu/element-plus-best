@@ -1,5 +1,6 @@
 import App from '@/App.vue'
 import { setupDayjs } from '@/plugins/dayjs'
+import { setupElementPlusPropDefault } from '@/plugins/element-plus'
 import { setupIconifyOffline } from '@/plugins/iconify'
 import { setupNProgress } from '@/plugins/n-progress'
 import { setupRouter } from '@/router'
@@ -13,6 +14,8 @@ async function setupApp() {
   setupIconifyOffline()
 
   setupDayjs()
+
+  setupElementPlusPropDefault()
 
   const app = createApp(App)
 
