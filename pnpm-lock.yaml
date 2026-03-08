@@ -35,6 +35,12 @@ importers:
       '@ianvs/prettier-plugin-sort-imports':
         specifier: 4.7.1
         version: 4.7.1(@vue/compiler-sfc@3.5.29)(prettier@3.8.1)
+      '@iconify/json':
+        specifier: 2.2.447
+        version: 2.2.447
+      '@iconify/vue':
+        specifier: 5.0.0
+        version: 5.0.0(vue@3.5.29(typescript@5.9.3))
       '@playwright/test':
         specifier: 1.58.2
         version: 1.58.2
@@ -862,6 +868,12 @@ packages:
       prettier-plugin-ember-template-tag:
         optional: true
 
+  '@iconify/json@2.2.447':
+    resolution:
+      {
+        integrity: sha512-hRPz6U6eN0C959BrYb0rE+I6f7BjDIPfgt8C9Ln5FxZ1Hw3aJQ+su/qbWy/+yJU74lLlXuwaS0ZfE8Kam6NkeA==,
+      }
+
   '@iconify/types@2.0.0':
     resolution:
       {
@@ -873,6 +885,14 @@ packages:
       {
         integrity: sha512-Zlzem1ZXhI1iHeeERabLNzBHdOa4VhQbqAcOQaMKuTuyZCpwKbC2R4Dd0Zo3g9EAc+Y4fiarO8HIHRAth7+skw==,
       }
+
+  '@iconify/vue@5.0.0':
+    resolution:
+      {
+        integrity: sha512-C+KuEWIF5nSBrobFJhT//JS87OZ++QDORB6f2q2Wm6fl2mueSTpFBeBsveK0KW9hWiZ4mNiPjsh6Zs4jjdROSg==,
+      }
+    peerDependencies:
+      vue: '>=3'
 
   '@isaacs/cliui@8.0.2':
     resolution:
@@ -5336,6 +5356,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@iconify/json@2.2.447':
+    dependencies:
+      '@iconify/types': 2.0.0
+      pathe: 2.0.3
+
   '@iconify/types@2.0.0': {}
 
   '@iconify/utils@3.1.0':
@@ -5343,6 +5368,11 @@ snapshots:
       '@antfu/install-pkg': 1.1.0
       '@iconify/types': 2.0.0
       mlly: 1.8.1
+
+  '@iconify/vue@5.0.0(vue@3.5.29(typescript@5.9.3))':
+    dependencies:
+      '@iconify/types': 2.0.0
+      vue: 3.5.29(typescript@5.9.3)
 
   '@isaacs/cliui@8.0.2':
     dependencies:
