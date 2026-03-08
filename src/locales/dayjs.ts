@@ -1,3 +1,5 @@
+import type { LangType } from '@/types/app.ts'
+
 import { CacheKeyEnum } from '@/enums/cacheEnum.ts'
 import { dateUtil } from '@/utils/dateUtil.ts'
 import { storage } from '@/utils/storageUtil.ts'
@@ -8,7 +10,7 @@ import 'dayjs/locale/en'
 const localeMap = {
   'zh-CN': 'zh-cn',
   'en-US': 'en',
-} as const satisfies Record<App.I18n.LangType, string>
+} as const satisfies Record<LangType, string>
 
 type LocaleName = (typeof localeMap)[keyof typeof localeMap]
 
@@ -65,7 +67,7 @@ const localeConfigs: Record<LocaleName, Parameters<typeof dateUtil.updateLocale>
   },
 }
 
-export function setDayjsLocale(lang: App.I18n.LangType = 'zh-CN') {
+export function setDayjsLocale(lang: LangType = 'zh-CN') {
   const localeName = localeMap[lang || storage.get(CacheKeyEnum.LANG) || 'zh-CN']
 
   dateUtil.locale(localeName)

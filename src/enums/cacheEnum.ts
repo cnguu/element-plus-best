@@ -1,3 +1,4 @@
+import type { LangType } from '@/types/app.ts'
 import type { Userinfo } from '@/types/shared.ts'
 
 /**
@@ -16,7 +17,7 @@ export type CacheKeyType = (typeof CacheKeyEnum)[keyof typeof CacheKeyEnum]
 /** 存储值的类型映射 */
 export type CacheValueType = {
   /** 语言 */
-  [CacheKeyEnum.LANG]: App.I18n.LangType
+  [CacheKeyEnum.LANG]: LangType
   /** 授权令牌 */
   [CacheKeyEnum.TOKEN]: string
   /** 用户信息 */
